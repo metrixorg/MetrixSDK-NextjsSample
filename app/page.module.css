@@ -52,6 +52,7 @@
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  z-index: 1;
 }
 
 .card span {
@@ -210,12 +211,17 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
+  .logo {
+    filter: drop-shadow(0 0 0.3rem #ffffff70);
+  }
+  .logo-colored {
     filter: invert(1);
   }
+}
 
+@media (prefers-color-scheme: light) {
   .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    filter: invert(1);
   }
 }
 

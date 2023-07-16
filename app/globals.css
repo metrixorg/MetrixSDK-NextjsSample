@@ -105,3 +105,9 @@ a {
     color-scheme: dark;
   }
 }
+
+button,
+input,
+label {
+  margin: 8px;
+}
