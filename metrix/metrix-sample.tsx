@@ -20,12 +20,11 @@ export default function MetrixSample() {
 
     useEffect(() => {
         const temp = localStorage.getItem("username")
-        console.log("XXX" + temp)
         setUsername(temp)
         init(APP_ID, API_KEY, config);
         if (temp)
             authorizeUser(temp)
-    })
+    }, [])
 
 
 
