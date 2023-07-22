@@ -1,6 +1,15 @@
 'use client'
 import {useState, useRef, useEffect} from 'react'
-import {init, authorizeUser, setFirstName, setLastName, setPhoneNumber, setCustomAttribute, newEvent} from "@metrixorg/websdk";
+import {
+    init,
+    authorizeUser,
+    setFirstName,
+    setLastName,
+    setPhoneNumber,
+    setCustomAttribute,
+    newEvent,
+    SDKConfig
+} from "@metrixorg/websdk";
 import styles from '../app/page.module.css'
 
 const APP_ID = process.env.NEXT_PUBLIC_METRIX_APP_ID!!
@@ -11,10 +20,11 @@ const EVENT_SLUG = process.env.NEXT_PUBLIC_METRIX_EVENT_SLUG!!
 export default function MetrixSample() {
     const [username, setUsername] = useState<null | string>(null)
 
-    const config = {
+    const config: SDKConfig = {
         push: {
             enabled : true, // defaults to false but if set to true you must provide publicKey.
             publicKey: PUSH_PUBLIC_KEY, // your push subscription public key.
+            showBell: true
         }
     }
 
